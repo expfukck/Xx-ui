@@ -478,11 +478,13 @@ check_login_info(){
         v6=`curl -s6m8 https://ip.gs -k`
         v4=`curl -s4m8 https://ip.gs -k`
         wg-quick up wgcf >/dev/null 2>&1
+        echo -e "傻逼傻逼}"
     else
         v6=`curl -s6m8 https://ip.gs -k`
         v4=`curl -s4m8 https://ip.gs -k`
+          echo -e "傻逼傻逼111}"
     fi
-    
+    echo -e "傻逼傻逼12221}"
     config_port=$(/usr/local/x-ui/x-ui 2>&1 | grep tcp | awk '{print $5}' | sed "s/://g")
 }
 
