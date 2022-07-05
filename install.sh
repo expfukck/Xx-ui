@@ -473,17 +473,17 @@ check_login_info(){
     WgcfIPv4Status=$(curl -s4m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
     WgcfIPv6Status=$(curl -s6m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
     if [[ $WgcfIPv4Status =~ "on"|"plus" ]] || [[ $WgcfIPv6Status =~ "on"|"plus" ]]; then
+        yellow "111111111111"
         wg-quick down wgcf >/dev/null 2>&1
         v6=`curl -s6m8 https://ip.gs -k`
         v4=`curl -s4m8 https://ip.gs -k`
         wg-quick up wgcf >/dev/null 2>&1
-        echo -e "傻逼傻逼}"
     else
+            yellow "2222222222222"
         v6=`curl -s6m8 https://ip.gs -k`
         v4=`curl -s4m8 https://ip.gs -k`
-          echo -e "傻逼傻逼111}"
     fi
-    echo -e "傻逼傻逼12221}"
+        yellow "333333333333333333"
     config_port=$(/usr/local/x-ui/x-ui 2>&1 | grep tcp | awk '{print $5}' | sed "s/://g")
 }
 
