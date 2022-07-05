@@ -469,7 +469,7 @@ show_usage() {
 }
 
 check_login_info(){
-    yellow "正在检查VPS系统及x-ui面板配置, 请稍等111..."
+    yellow "正在检查VPS系统及x-ui面板配置, 请稍等521..."
     WgcfIPv4Status=$(curl -s4m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
     WgcfIPv6Status=$(curl -s6m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
     if [[ $WgcfIPv4Status =~ "on"|"plus" ]] || [[ $WgcfIPv6Status =~ "on"|"plus" ]]; then
