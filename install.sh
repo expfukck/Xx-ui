@@ -472,6 +472,7 @@ check_login_info(){
     yellow "正在检查VPS系统及x-ui面板配置, 请稍等521..."
     WgcfIPv4Status=$(curl -s4m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
     WgcfIPv6Status=$(curl -s6m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
+    yellow "$WgcfIPv4Status $WgcfIPv6Status"
     if [[ $WgcfIPv4Status =~ "on"|"plus" ]] || [[ $WgcfIPv6Status =~ "on"|"plus" ]]; then
         yellow "111111111111"
         wg-quick down wgcf >/dev/null 2>&1
